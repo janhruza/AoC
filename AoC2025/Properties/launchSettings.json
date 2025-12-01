@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "AoC2025": {
+      "commandName": "Project"
+    },
+    "AoC2025 - input": {
+      "commandName": "Project",
+      "commandLineArgs": "input/1/input.txt 1"
+    },
+    "AoC2025 - test": {
+      "commandName": "Project",
+      "commandLineArgs": "test/1/input.txt 1"
+    }
+  }
+}
