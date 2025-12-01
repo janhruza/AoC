@@ -1,3 +1,9 @@
 <Solution>
-  <Project Path="AoC2025/AoC2025.csproj" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="AoC2025/AoC2025.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
 </Solution>
