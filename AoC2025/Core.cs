@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -51,8 +52,10 @@ public static class Core
         Console.WriteLine(puzzle.Source);
         Console.WriteLine();
 
+        Stopwatch sw = Stopwatch.StartNew();
         long resultPart1 = puzzle.Part1(inputFile);
         long resultPart2 = puzzle.Part2(inputFile);
+        sw.Stop();
 
         // get results formatted in a table
         List<string> lines = [];
@@ -71,6 +74,8 @@ public static class Core
             Console.WriteLine(line);
         }
 
+        Console.WriteLine(new string('-', longest));
+        Console.WriteLine($"Operation completed in {sw.ElapsedMilliseconds} ms");
         return;
     }
 
