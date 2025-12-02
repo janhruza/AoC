@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace AoC2025.Puzzles;
 
@@ -28,7 +29,62 @@ public class Puzzle2 : IPuzzleSolution
     /// <returns>An integer representing the computed result for Part 1. Returns -1 if the input does not produce a valid result.</returns>
     public long Part1(string inputFile)
     {
-        return 0;
+        // problem breakdown:
+        // split input into intervals
+        // iterate through every number in every interval
+        // verify if the number contains a repeating pattern
+        // Yes -> count it
+        // No -> move on
+        // result: sum of counted numbers
+
+        long count = 0;
+        long sum = 0;
+
+        using (StringReader? reader = Core.GetStringReader(inputFile))
+        {
+            if (reader == null)
+            {
+                return -1;
+            }
+
+            // input is a long line of text separated by commas
+            string line = reader.ReadLine() ?? string.Empty;
+            string[] intervals = line.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+            // iterate through every interval
+            foreach (string interval in intervals)
+            {
+                // get the interval bounds
+                string[] bounds = interval.Split('-', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+                long start = long.Parse(bounds[0]);
+                long end = long.Parse(bounds[1]);
+
+                // iterate through every number in the interval
+                for (long number = start; number <= end; number++)
+                {
+                    // check for repeating pattern
+                    string sNumber = number.ToString();
+                    if (sNumber.Length % 2 != 0)
+                    {
+                        // odd length numbers cannot have repeating patterns
+                        continue;
+                    }
+
+                    int halfLength = sNumber.Length / 2;
+                    string half1 = sNumber.Substring(0, halfLength);
+                    string half2 = sNumber.Substring(halfLength, halfLength);
+
+                    if (half1 == half2)
+                    {
+                        // found a repeating pattern
+                        count++;
+                        sum += number;
+                    }
+                }
+            }
+        }
+
+        return sum;
     }
 
     /// <summary>
