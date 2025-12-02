@@ -49,8 +49,8 @@ public static class Core
         Console.WriteLine(puzzle.Source);
         Console.WriteLine();
 
-        int resultPart1 = puzzle.Part1(inputFile);
-        int resultPart2 = puzzle.Part2(inputFile);
+        long resultPart1 = puzzle.Part1(inputFile);
+        long resultPart2 = puzzle.Part2(inputFile);
 
         Console.WriteLine($"Part    Solution");
         Console.WriteLine($"----------------");

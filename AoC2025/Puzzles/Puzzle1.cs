@@ -28,7 +28,7 @@ public class Puzzle1 : IPuzzleSolution
     /// </summary>
     /// <param name="inputFile">The input data file to be evaluated. Cannot be null.</param>
     /// <returns>An integer representing the computed result for Part 1. Returns -1 if the input does not produce a valid result.</returns>
-    public int Part1(string inputFile)
+    public long Part1(string inputFile)
     {
         if (File.Exists(inputFile) == false)
         {
@@ -41,8 +41,8 @@ public class Puzzle1 : IPuzzleSolution
             return -1;
         }
 
-        int count = 0;
-        int dial = 50;
+        long count = 0;
+        long dial = 50;
         while (reader.Peek() >= 0)
         {
             string? line = reader.ReadLine();
@@ -78,7 +78,7 @@ public class Puzzle1 : IPuzzleSolution
     /// </summary>
     /// <param name="inputFile">The input data file to be evaluated for Part 2. Cannot be null.</param>
     /// <returns>An integer representing the computed result for Part 2. Returns -1 if the input does not produce a valid result.</returns>
-    public int Part2(string inputFile)
+    public long Part2(string inputFile)
     {
         if (File.Exists(inputFile) == false)
         {
@@ -91,8 +91,8 @@ public class Puzzle1 : IPuzzleSolution
             return -1;
         }
 
-        int count = 0;
-        int dial = 50;
+        long count = 0;
+        long dial = 50;
 
         while (reader.Peek() >= 0)
         {

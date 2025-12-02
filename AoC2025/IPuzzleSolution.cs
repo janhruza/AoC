@@ -23,12 +23,12 @@ public interface IPuzzleSolution
     /// </summary>
     /// <param name="inputFile">The input data file to be evaluated. Cannot be null.</param>
     /// <returns>An integer representing the computed result for Part 1 based on the provided input.</returns>
-    int Part1(string inputFile);
+    long Part1(string inputFile);
 
     /// <summary>
     /// Calculates the result for part two of the puzzle using the specified input string.
     /// </summary>
     /// <param name="inputFile">The input data file to be processed for part two. Cannot be null.</param>
     /// <returns>An integer representing the computed result for part two based on the provided input.</returns>
-    int Part2(string inputFile);
+    long Part2(string inputFile);
 }
