@@ -3,6 +3,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 
 namespace AoC2025;
 
@@ -52,10 +54,23 @@ public static class Core
         long resultPart1 = puzzle.Part1(inputFile);
         long resultPart2 = puzzle.Part2(inputFile);
 
+        // get results formatted in a table
+        List<string> lines = [];
+        lines.Add($"Part 1: {resultPart1,8}");
+        lines.Add($"Part 2: {resultPart2,8}");
+
+        // get the longest line
+        int longest = lines.Max(x => x.Length);
+
+        // print results
         Console.WriteLine($"Part    Solution");
-        Console.WriteLine($"----------------");
-        Console.WriteLine($"Part 1: {resultPart1,8}");
-        Console.WriteLine($"Part 2: {resultPart2,8}");
+        Console.WriteLine(new string('-', longest));
+
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
+
         return;
     }
 
