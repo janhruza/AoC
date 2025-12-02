@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace AoC2025.Puzzles;
 
@@ -16,7 +15,7 @@ public class Puzzle1 : IPuzzleSolution
     /// <summary>
     /// Representing the title of this puzzle.
     /// </summary>
-    public string Title => "AoC 2025 day 1";
+    public string Title => "AoC 2025 Day 1";
 
     /// <summary>
     /// Gets the puzzle source.

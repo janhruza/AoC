@@ -67,6 +67,7 @@ public static class Core
     /// </remarks>
     internal static IReadOnlyDictionary<int, IPuzzleSolution> PuzzleByDay => new Dictionary<int, IPuzzleSolution>
     {
-        { 0, new Puzzle1() }
+        { 0, new Puzzle1() },
+        { 1, new Puzzle2() },
     };
 }
