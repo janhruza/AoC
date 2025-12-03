@@ -59,8 +59,8 @@ public static class Core
 
         // get results formatted in a table
         List<string> lines = [];
-        lines.Add($"Part 1: {resultPart1,8}");
-        lines.Add($"Part 2: {resultPart2,8}");
+        lines.Add($"Part 1: {resultPart1}");
+        lines.Add($"Part 2: {resultPart2}");
 
         // get the longest line
         int longest = lines.Max(x => x.Length);
