@@ -5,11 +5,11 @@
     },
     "AoC2025 - input": {
       "commandName": "Project",
-      "commandLineArgs": "input/2/input.txt 2"
+      "commandLineArgs": "input/3/input.txt 3"
     },
     "AoC2025 - test": {
       "commandName": "Project",
-      "commandLineArgs": "test/2/input.txt 2"
+      "commandLineArgs": "test/3/input.txt 3"
     }
   }
 }
