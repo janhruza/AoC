@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.IO.Pipelines;
 using System.Linq;
 
 namespace AoC2025.Puzzles;
@@ -47,7 +49,6 @@ public class Puzzle4 : IPuzzleSolution
 
         // the input is a grid of characters where '@' represents a roll of paper and '.' represents empty space
         char paper = '@';
-        char empty = '.';
         long total = 0;
 
         char[][] inputGrid = File.ReadAllLines(inputFile)
@@ -95,6 +96,60 @@ public class Puzzle4 : IPuzzleSolution
         return total;
     }
 
+    private long ProcessGrid(char[][] input)
+    {
+        char paper = '@';
+        char empty = '.';
+        long removedTotal = 0;
+
+        while (true)
+        {
+            List<(int r, int c)> toRemove = new List<(int, int)>();
+
+            for (int row = 0; row < input.Length; row++)
+            {
+                for (int col = 0; col < input[row].Length; col++)
+                {
+                    if (input[row][col] == paper)
+                    {
+                        int count = 0;
+                        
+                        // directions
+                        int[] dRow = { -1, -1, -1, 0, 0, 1, 1, 1 };
+                        int[] dCol = { -1, 0, 1, -1, 1, -1, 0, 1 };
+
+                        for (int k = 0; k < 8; k++)
+                        {
+                            int nr = row + dRow[k];
+                            int nc = col + dCol[k];
+
+                            if (nr >= 0 && nr < input.Length &&
+                                nc >= 0 && nc < input[nr].Length &&
+                                input[nr][nc] == paper)
+                            {
+                                count++;
+                                if (count >= 4) break; // early exit
+                            }
+                        }
+
+                        if (count < 4)
+                            toRemove.Add((row, col));
+                    }
+                }
+            }
+
+            if (toRemove.Count == 0) break; // nothing to remove
+
+            foreach (var (r, c) in toRemove)
+                input[r][c] = empty;
+
+            removedTotal += toRemove.Count;
+        }
+
+        return removedTotal;
+    }
+
+
     /// <summary>
     /// Processes the specified input string and returns the result for Part 2 of the challenge.
     /// </summary>
@@ -102,7 +157,23 @@ public class Puzzle4 : IPuzzleSolution
     /// <returns>An integer representing the computed result for Part 2. Returns -1 if the input does not produce a valid result.</returns>
     public long Part2(string inputFile)
     {
+        // same as part 1 but now we can remove those that match criteria,
+        // so in the loop we count the number of removed blocks of paper until this number is 0 and then
+        // we return the number of paper blocks
         long total = 0;
+
+        char[][] inputGrid = File.ReadAllLines(inputFile)
+            .Select(line => line.ToCharArray())
+            .ToArray();
+
+        long removed = -1;
+
+        do
+        {
+            removed = ProcessGrid(inputGrid);
+            total += removed;
+        }
+        while (removed > 0);
 
         return total;
     }
