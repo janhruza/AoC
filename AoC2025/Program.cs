@@ -79,7 +79,7 @@ internal class Program
 
             // get the puzzle for the specified day
             IPuzzleSolution puzzle = Core.PuzzleByDay[idx];
-     
+
             // run the specified puzzle
             Core.SolvePuzzle(puzzle, inputFile);
             return 0;

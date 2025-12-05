@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace AoC2025;
 
@@ -91,5 +90,6 @@ public static class Core
         { 1, new Puzzle2() },
         { 2, new Puzzle3() },
         { 3, new Puzzle4() },
+        { 4, new Puzzle5() },
     };
 }

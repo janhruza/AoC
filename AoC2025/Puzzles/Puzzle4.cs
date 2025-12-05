@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.IO.Pipelines;
 using System.Linq;
 
 namespace AoC2025.Puzzles;
@@ -113,7 +110,7 @@ public class Puzzle4 : IPuzzleSolution
                     if (input[row][col] == paper)
                     {
                         int count = 0;
-                        
+
                         // directions
                         int[] dRow = { -1, -1, -1, 0, 0, 1, 1, 1 };
                         int[] dCol = { -1, 0, 1, -1, 1, -1, 0, 1 };
