@@ -17,7 +17,7 @@ public class Puzzle4 : IPuzzleSolution
     /// <summary>
     /// Representing the title of this puzzle.
     /// </summary>
-    public string Title => "AoC 2025 Day 4";
+    public string Title => "AoC 2025 Day 4: Printing Department";
 
     /// <summary>
     /// Gets the puzzle source.
