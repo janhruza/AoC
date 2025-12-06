@@ -91,5 +91,6 @@ public static class Core
         { 2, new Puzzle3() },
         { 3, new Puzzle4() },
         { 4, new Puzzle5() },
+        { 5, new Puzzle6() },
     };
 }
