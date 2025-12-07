@@ -7,4 +7,4 @@ Advent of Code is an annual event that provides daily programming challenges dur
 Advent of Code is available at [adventofcode.com](https://adventofcode.com/).
 
 ## Use of the AI
-I used AI tools solely to generate the documentation and README files for this project. All code solutions were written entirely by me without any AI assistance.
+I used AI to help me think about the given problems. Most of the code was written solely by me but some parts were AI generated.
