@@ -21,7 +21,7 @@ public class Puzzle6 : IPuzzleSolution
     /// <summary>
     /// Gets the puzzle source.
     /// </summary>
-    public string Source => "https://adventofcode.com/2025/day/5";
+    public string Source => "https://adventofcode.com/2025/day/6";
 
     /// <summary>
     /// Processes the specified input string and returns the result for Part 1 of the problem.
