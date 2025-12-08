@@ -51,7 +51,7 @@ public class Puzzle5 : IPuzzleSolution
                     break;
                 }
 
-                string [] parts = line.Split('-');
+                string[] parts = line.Split('-');
                 long start = long.Parse(parts[0]);
                 long end = long.Parse(parts[1]);
 

@@ -56,7 +56,7 @@ public class Puzzle6 : IPuzzleSolution
         {
             string op = grid[rows - 1, col].Trim();
             long subtotal = (op == "*" ? 1 : 0);
-            
+
             if (op == "*")
             {
                 // multiply operation
