@@ -1,10 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 
 namespace AoC2025.Puzzles;
-
-using VectorsCollection = System.Collections.Generic.List<System.Collections.Generic.List<Vector3>>;
 
 /// <summary>
 /// Provides solutions for Day 7 of the puzzle challenge by implementing the required parts as defined by the <see
@@ -60,19 +59,11 @@ public class Puzzle8 : IPuzzleSolution
         // check if the file exists
         if (File.Exists(inputFile) == false) return -1;
 
-        string[] lines = File.ReadAllLines(inputFile);
-
-
-        for (int i = 0; i < lines.Length; i++)
-        {
-            for (int j = 0; j < lines.Length; j++)
-            {
-                // TODO figure out the smallest distance
-            }
-        }
-
-        return 0;
+        // TODO implement
+        long result = 0;
+        return result;
     }
+
 
     /// <summary>
     /// Processes the specified input string and returns the result for Part 2 of the challenge.
@@ -81,6 +72,8 @@ public class Puzzle8 : IPuzzleSolution
     /// <returns>An integer representing the computed result for Part 2. Returns -1 if the input does not produce a valid result.</returns>
     public long Part2(string inputFile)
     {
-        return 0;
+        // TODO implement
+        long result = 0;
+        return result;
     }
 }
