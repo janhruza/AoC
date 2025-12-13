@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace AoC2025.Puzzles;
 
 /// <summary>
-/// Provides solutions for Day 7 of the puzzle challenge by implementing the required parts as defined by the <see
+/// Provides solutions for Day 10 of the puzzle challenge by implementing the required parts as defined by the <see
 /// cref="IPuzzleSolution"/> interface.
 /// </summary>
-/// <remarks>Use this class to execute Part 1 and Part 2 solutions for Day 7 by supplying the puzzle input as a
+/// <remarks>Use this class to execute Part 1 and Part 2 solutions for Day 10 by supplying the puzzle input as a
 /// string. Each part returns an integer result based on the provided input.</remarks>
 public class Puzzle10 : IPuzzleSolution
 {
